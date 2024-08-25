@@ -1,5 +1,6 @@
 import "./globals.css";
 import type { Metadata } from "next";
+import QueryProvider from "./lib/QueryProvider";
 
 export const metadata: Metadata = {
   title: "MyFC",
@@ -13,7 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="font-korean bg-black text-white">{children}</body>
+      <body className="font-korean bg-black text-white">
+        <QueryProvider>{children}</QueryProvider>
+      </body>
     </html>
   );
 }
